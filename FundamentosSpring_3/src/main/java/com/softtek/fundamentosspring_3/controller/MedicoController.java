@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/medicos")
@@ -15,7 +17,7 @@ public class MedicoController{
     @Autowired
     private IMedicoService service;
     @GetMapping("/listar")
-    public Medico[] listar() throws Exception{
+    public List<Medico> listar() throws Exception{
         return service.listar();
     }
 }

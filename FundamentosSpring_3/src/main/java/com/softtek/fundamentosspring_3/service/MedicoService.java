@@ -7,13 +7,15 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class MedicoService implements IMedicoService{
     @Autowired
     private IMedicoRepo repo;
     @Override
-    public Medico[] listar() {
+    public List<Medico> listar() {
         return repo.listar();
     }
 }
